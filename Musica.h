@@ -7,4 +7,6 @@ class Musica{
         string nombre;
         string artista;
         int duracion;
+    public:
+        Musica();
 };
