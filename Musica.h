@@ -9,4 +9,12 @@ class Musica{
         int duracion;
     public:
         Musica();
+        Musica(string nombre, string artista, int duracion);
+        string getNombre();
+        string getArtista();
+        int getDuracion();
+        void setNombre();
+        void setArtista();
+        
+
 };
