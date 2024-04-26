@@ -6,5 +6,8 @@ class ListaDeReproduccion{
         Musica *reproduciendo;
         int cant_musicas;
     public:
-        ListaDeReproduccion(const Musica &inicial){}
+        ListaDeReproduccion(const Musica &inicial);
+        Musica& getReproduciendo();
+        int getCantMusicas();
+        
 };
