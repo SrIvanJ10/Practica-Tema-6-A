@@ -17,10 +17,12 @@ bool ListaDeReproduccion::setReproduciendo(int numero){
     return true; //acaba de empezar a reproducir música
 }
 bool ListaDeReproduccion::setReproduciendo(Musica musica){
-    //int i = 0;
-    //while(this->musica[i] != musica && i < this.cant_musicas){
-
-    //}
+    int i = 0;
+    while(!(this->musica[i] == musica) && (i < this.cant_musicas)){
+        //la canción no coincide con la numero i
+        i++; //siguiente canción
+    }
+    (i < this.cant_musicas)? /*Se ha encontrado la canción en la lista*/ this->reproduciendo = &this->musica[i] : /*La canción no está en la lista*/ cout << "no se encuentra la canción en la lista de reproducci" << char(162) << "n" << endl;
 }
 string ListaDeReproduccion::toString(){
     string c = "\n";
@@ -31,6 +33,16 @@ string ListaDeReproduccion::toString(){
     return c;
 }
 ListaDeReproduccion& ListaDeReproduccion::operator+=(const Musica& musica){
+    int i = 0;
+    while(!(this->musica[i] == musica) && (i < this.cant_musicas)){
+        //la canción no coincide con la numero i
+        i++; //siguiente canción
+    }
+    if(i < this.cant_musicas){
+        //ya existe la canción
+        return *this; //termina la función si realizar nada
+    }
+
     if(this->cant_musicas < MAX){
         //caben más canciones
         this->musica[this->cant_musicas] = musica;
@@ -45,6 +57,6 @@ ListaDeReproduccion& ListaDeReproduccion::operator+=(const Musica& musica){
 
 
 
-friend bool ListaDeReproduccion::operator!=(const Musica& musica){
-    
+friend bool ListaDeReproduccion::operator==(Musica& m, const Musica& musica){
+    return ((m.getNombre() == musica.getNombre()) && (m.getArtista() == musica.getArtista()) && (m.getDuracion() == musica.getDuracion()));
 }
