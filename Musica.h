@@ -1,3 +1,4 @@
+#pragma once
 #include<iostream>
 
 using namespace std;
@@ -10,13 +11,13 @@ class Musica{
     public:
         Musica();
         Musica(string nombre, string artista, int duracion);
-        string getNombre();
-        string getArtista();
-        int getDuracion();
-        void setNombre();
-        void setArtista();
-        void setDuracion();
+        string getNombre() const;
+        string getArtista() const;
+        int getDuracion() const;
+        void setNombre(string nombre);
+        void setArtista(string artista);
+        void setDuracion(int duracion);
         string toString();
-        bool operator==(const Musica &otra);
+        bool operator==(const Musica &otra) const;
         bool operator<(const int &duracion);
 };
