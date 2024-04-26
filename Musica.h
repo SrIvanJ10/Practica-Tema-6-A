@@ -16,4 +16,7 @@ class Musica{
         void setNombre();
         void setArtista();
         void setDuracion();
+        string toString();
+        bool operator==(const Musica &otra);
+        bool operator<(const int &duracion);
 };
