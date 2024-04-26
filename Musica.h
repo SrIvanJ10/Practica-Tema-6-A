@@ -15,6 +15,5 @@ class Musica{
         int getDuracion();
         void setNombre();
         void setArtista();
-        
-
+        void setDuracion();
 };
